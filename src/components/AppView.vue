@@ -6,7 +6,11 @@ import keyboard from '@/utils/keyboard.js';
 const keyleft = keyboard("ArrowLeft"),
       keyright = keyboard("ArrowRight");
 
-
+const CarTextures = {
+  center: PIXI.Texture.from('/src/assets/game-assets/cars/car_center.png'),
+  left: PIXI.Texture.from('/src/assets/game-assets/cars/car_right.png'),
+  right: PIXI.Texture.from('/src/assets/game-assets/cars/car_left.png')
+}
 
 let SCREEN_WIDTH = window.innerWidth * 0.7;
 let SCREEN_HEIGHT = window.innerHeight * 0.5;
@@ -53,7 +57,7 @@ onMounted(() =>{
   app.stage.addChild(road);
 
   // Create the car and add it to the stage
-  let playerCar = PIXI.Sprite.from('/src/assets/game-assets/cars/car_center.png');
+  let playerCar = PIXI.Sprite.from(CarTextures.center);
   playerCar.width = SCREEN_WIDTH * 0.2;
   playerCar.height = SCREEN_HEIGHT * 0.25;
   playerCar.anchor.set(0.5, 1);
@@ -77,11 +81,11 @@ onMounted(() =>{
     
     if(playerCar.x > playerCar.originalPositionX){
       playerCar.x = playerCar.originalPositionX;
-      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_center.png')
+      playerCar.texture = CarTextures.center;
     }
     else if (playerCar.x > playerCar.leftPositionX && playerCar.x <= playerCar.originalPositionX){
       playerCar.x = playerCar.leftPositionX;
-      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_right.png')
+      playerCar.texture = CarTextures.left;
     }
   };
   
@@ -89,11 +93,11 @@ onMounted(() =>{
   keyright.press = () => {
     if(playerCar.x < playerCar.originalPositionX){
       playerCar.x = playerCar.originalPositionX;
-      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_center.png')
+      playerCar.texture = CarTextures.center;
     }
     else if (playerCar.x < playerCar.rightPositionX && playerCar.x >= playerCar.originalPositionX){
       playerCar.x = playerCar.rightPositionX;
-      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_left.png')
+      playerCar.texture = CarTextures.right;
     }
   };
   
