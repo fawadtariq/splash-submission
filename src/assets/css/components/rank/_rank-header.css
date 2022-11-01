@@ -1,0 +1,26 @@
+
+.rank-card-header {
+    @apply flex justify-between px-3 py-3 gap-1 min-h-[40px];
+    background: radial-gradient(101.35% 101.35% at 50% 22.11%, rgba(255, 255, 255, 0.19) 0%, rgba(24, 20, 53, 0.26) 71.87%), #9747FF;
+    box-shadow: inset 0px 4px 12px #FFFFFF;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.rank-card-header-record{
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 36px;
+    -webkit-text-stroke: 3px rgba(50, 31, 98, 1);
+    color: #FFFFFF;
+}
+.rank-card-header-position{
+    @apply flex flex-col justify-center items-center py-4 px-2 gap-[2px] w-16 h-16 rounded-full;
+    background: radial-gradient(101.35% 101.35% at 50% 22.11%, rgba(78, 32, 130, 0.16) 0%, rgba(12, 12, 76, 0.16) 71.87%), #131444;
+
+}
+
+.rank-card-header-position > p {
+    @apply font-black text-sm items-center text-center text-white;
+}

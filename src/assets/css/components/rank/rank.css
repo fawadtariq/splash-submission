@@ -1,0 +1,9 @@
+@import './_rank-header.css';
+@import './_rank-item.css';
+
+.rank-card{
+    @apply flex flex-col items-start p-0 rounded-xl;
+     background: rgba(16, 12, 74, 0.2);
+     box-shadow: inset 0px 4px 63px rgba(255, 255, 255, 0.25);
+ }
+ 
