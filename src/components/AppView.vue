@@ -1,13 +1,15 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import * as PIXI from 'pixi.js';
-import gsap from 'gsap';
+
+import keyboard from '@/utils/keyboard.js';
+const keyleft = keyboard("ArrowLeft"),
+      keyright = keyboard("ArrowRight");
+
 
 
 let SCREEN_WIDTH = window.innerWidth * 0.7;
 let SCREEN_HEIGHT = window.innerHeight * 0.5;
-
-
 
 const getAppDimensions = () => {
   //width = 4019
@@ -56,14 +58,44 @@ onMounted(() =>{
   playerCar.height = SCREEN_HEIGHT * 0.25;
   playerCar.anchor.set(0.5, 1);
   playerCar.x = app.renderer.screen.width/2;
+  playerCar.originalPositionX = playerCar.x;
+  playerCar.rightPositionX = playerCar.x + 125;
+  playerCar.leftPositionX = playerCar.x - 125;
   playerCar.y = app.renderer.screen.height - 40;
+  playerCar.vx = 0; playerCar.vy = 0;
   app.stage.addChild(playerCar);
 
   let elapsed = 0.0;
   app.ticker.add((delta) => {
     elapsed += delta;
+    playerCar.x += playerCar.vx;
+  playerCar.y += playerCar.vy;
   });
 
+  //Left arrow key `press` method
+  keyleft.press = () => {
+    
+    if(playerCar.x > playerCar.originalPositionX){
+      playerCar.x = playerCar.originalPositionX;
+      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_center.png')
+    }
+    else if (playerCar.x > playerCar.leftPositionX && playerCar.x <= playerCar.originalPositionX){
+      playerCar.x = playerCar.leftPositionX;
+      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_right.png')
+    }
+  };
+  
+  //Right
+  keyright.press = () => {
+    if(playerCar.x < playerCar.originalPositionX){
+      playerCar.x = playerCar.originalPositionX;
+      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_center.png')
+    }
+    else if (playerCar.x < playerCar.rightPositionX && playerCar.x >= playerCar.originalPositionX){
+      playerCar.x = playerCar.rightPositionX;
+      playerCar.texture = PIXI.Texture.from('/src/assets/game-assets/cars/car_left.png')
+    }
+  };
   
 })
 

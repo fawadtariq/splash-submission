@@ -1,5 +1,5 @@
 .app-container {
-    @apply py-5 h-screen landscape:min-w-[100vh] portrait:w-screen absolute left-1/2 top-0 -translate-x-1/2  grid grid-rows-5 items-center justify-items-center;
+    @apply py-5 h-screen landscape:min-w-[80vw] portrait:w-screen absolute left-1/2 top-0 -translate-x-1/2  grid grid-rows-5 items-center justify-items-center;
 }
 
 body {
@@ -22,22 +22,3 @@ body {
 }
 
 
-.chat-box{
-   @apply p-4 w-full h-full rounded-2xl relative;
-
-background: #180C3C;
-
-
-}
-
-.chat-box:before{
-    content: '';
-    background: linear-gradient(181deg, #514D67 1.31%, rgba(209, 206, 232, 0) 100%);
-    background-color: white;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    top: -4px; left: -4px; z-index: -1; border-radius: 16px;
-
-
-}

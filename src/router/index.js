@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-//====BEGIN: ADMIN COMPONENTS
 
 import BaseLayout from '@/layouts/base/Main.vue';
 
@@ -8,7 +7,6 @@ import Home from '@/views/home/Main.vue'
 
 
 
-//====END: ADMIN COMPONENTS
 
 const routes = [
   {

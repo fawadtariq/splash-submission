@@ -1,0 +1,6 @@
+.primary-btn{
+    @apply box-border flex flex-row justify-center items-center gap-2 h-9 rounded text-white text-sm font-bold;
+    background: linear-gradient(180deg, #995AFF -7.69%, rgba(108, 58, 252, 0.91) 127.88%);
+    box-shadow: 0px 1px 4px 4px rgb(255 255 255 / 25%) inset
+
+}

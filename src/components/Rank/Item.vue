@@ -1,13 +1,17 @@
 <template>
     <div class="ranking">
-                    <div class="title">John Doe</div>
-                    <div class="flex">
-                        <div class="record">
-                            2:44
-                        </div>
-                        <div class="rank">
-                            1<sub>st</sub>
-                        </div>
-                    </div>
-                </div>
+        <div class="title">{{ props.rank.name }}</div>
+        <div class="flex">
+            <div class="record">
+                {{ props.rank.record }}:00
+            </div>
+            <div class="rank">
+                {{ props.rank.rank}}st
+            </div>
+        </div>
+    </div>
 </template>
+<script setup>
+const props = defineProps(['rank'])
+
+</script>

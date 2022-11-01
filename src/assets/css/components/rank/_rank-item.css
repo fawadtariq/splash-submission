@@ -1,20 +1,21 @@
-
-.ranking{
-    @apply flex  items-center justify-between pl-4 gap-2 w-full h-9;
+.ranking {
+    @apply flex items-center justify-between pl-4 gap-2 w-full h-9;
     border-bottom: 1px solid rgba(130, 75, 244, 0.08);
-    }
-    .ranking .title{
-        @apply font-semibold text-xs;
-        color: #FFFEFE;
-    }
-    .ranking .record{
-      @apply h-full flex flex-col justify-center items-center px-2 py-[2px] gap-[10px] w-[70px];
-        @apply font-extrabold text-xl text-center;
+}
+
+.ranking .title {
+    @apply font-semibold text-xs;
+    color: #FFFEFE;
+}
+
+.ranking .record {
+    @apply h-full flex flex-col justify-center items-center px-2 py-[2px] gap-[10px] w-[70px];
+    @apply font-extrabold text-xl text-center;
     background: #261B50;
-    
+
     color: #FFFBFB;
-    }
-    .ranking .rank{
-        @apply font-extrabold text-xl text-center px-1;
-        color: #FFFBFB;
-    }
+}
+.ranking .rank {
+    @apply font-extrabold text-xl text-center px-1 mx-3;
+    color: #FFFBFB;
+}
