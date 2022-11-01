@@ -3,8 +3,10 @@ import { onMounted, ref } from 'vue';
 import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
 
+
 let SCREEN_WIDTH = window.innerWidth * 0.7;
 let SCREEN_HEIGHT = window.innerHeight * 0.5;
+
 
 
 const getAppDimensions = () => {
@@ -22,7 +24,7 @@ onMounted(() =>{
   document.getElementById('view').appendChild(app.view);
 
     // Create the sky and add it to the stage
-    let sky = PIXI.Sprite.from('/src/assets/game-assets/sky.png');
+    let sky = PIXI.Sprite.from('./src/assets/game-assets/sky.png');
   sky.width = SCREEN_WIDTH;
   sky.height = SCREEN_HEIGHT;
   sky.anchor.set(0.5, 0);
